@@ -6,7 +6,7 @@ __docformat__ = "reStructuredText"
 import sys
 import os
 import pygame
-
+import pickle
 from copy import deepcopy
 
 import pymunk
@@ -425,8 +425,13 @@ class PushEnv(gym.Env):
         self.reset_to_state = reset_to_state
         self.coverage_arr = []
 
+        with open(self.shape, 'rb') as f:
+            shapes = pickle.load(f)
+        
+        shape = shapes[0]
+
         self.options = options
-        self.options['block_img']=block_img_dict[self.shape]
+        self.options['block_img']=block_img_dict[shape]
         self.pusher = Pusher(self.options)
 
         self.screen = self.pusher.screen

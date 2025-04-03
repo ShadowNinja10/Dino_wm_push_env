@@ -2,7 +2,7 @@ name: pushenv
 args: []
 kwargs: 
   with_target: true
-  shape: "E_img"
+  shape: "${oc.env:DATASET_DIR}/pushenv/train/shapes.pkl"
 
 
 dataset:

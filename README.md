@@ -18,4 +18,4 @@
     - `push_env.py`
     - `pushenv_wrapper.py`
 - **Shape Configuration:**  
-  - To create an environment of the desired shape ("X", "L", "E", "T"), update the `shape` keyword argument in the configuration file at `conf/env/pushenv.yaml`.
+  - shape is handled by the shape file is present in the dataset. According to the shape respective env is created
