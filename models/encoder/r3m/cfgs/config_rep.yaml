@@ -9,12 +9,12 @@ save_snapshot: false
 load_snap: ""
 # replay buffer
 num_workers: 10
-batch_size: 32 #256
+batch_size: 1 #256
 train_steps: 2000000
 eval_freq: 20000
 # misc
 seed: 1
-device: cuda
+device: cpu
 # experiment
 experiment: train_r3m
 # agent

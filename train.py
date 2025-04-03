@@ -57,7 +57,7 @@ class Trainer:
             torch.distributed.barrier()
             # # ==== /init ddp process group ====
 
-        self.accelerator = Accelerator(log_with="wandb")
+        self.accelerator = Accelerator(log_with="wandb",cpu=True)
         log.info(
             f"rank: {self.accelerator.local_process_index}  model_name: {model_name}"
         )

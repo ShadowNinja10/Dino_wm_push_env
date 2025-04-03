@@ -13,7 +13,7 @@ hydra:
     submitit_folder: ${hydra.sweep.dir}/.submitit/%j
     nodes: 1
     tasks_per_node: 1
-    cpus_per_task: 16
+    cpus_per_task: 1
     mem_gb: 256
     gres: "gpu:h100:1"
     qos: "explore"
@@ -23,7 +23,7 @@ hydra:
             "export MASTER_PORT=$(for port in $(shuf -i 30000-65500 -n 20); do if [[ $(netstat -tupln 2>&1 | grep $port | wc -l) -eq 0 ]] ; then echo $port; break; fi; done;)",]
 
 # model to load for planning
-ckpt_base_path: ./ # put absolute path here. Checkpoints will be loaded from ${ckpt_base_path}/outputs
+ckpt_base_path: /Users/jayesh/MSCS/RL/HIQL_pushT/fresh_dino_wm/dino_wm/saved_wm # put absolute path here. Checkpoints will be loaded from ${ckpt_base_path}/outputs
 model_name: null
 model_epoch: latest
 

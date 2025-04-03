@@ -1,6 +1,6 @@
 defaults:
   - _self_
-  - env: point_maze
+  - env: pushenv
   - encoder: dino 
   - action_encoder: proprio
   - proprio_encoder: proprio
@@ -9,7 +9,7 @@ defaults:
   - override hydra/launcher: submitit_slurm
 
 # base path to save model outputs. Checkpoints will be saved to ${ckpt_base_path}/outputs.
-ckpt_base_path: ./ # put absolute path here
+ckpt_base_path: /Users/jayesh/MSCS/RL/HIQL_pushT/fresh_dino_wm/dino_wm/saved_wm # put absolute path here
 
 hydra:
   run:
@@ -31,8 +31,8 @@ hydra:
 
 training:
   seed: 0
-  epochs: 100
-  batch_size: 32 # should >= nodes * tasks_per_node
+  epochs: 2
+  batch_size: 1 # should >= nodes * tasks_per_node
   save_every_x_epoch: 1
   reconstruct_every_x_batch: 500
   num_reconstruct_samples: 6

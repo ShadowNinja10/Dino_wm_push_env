@@ -49,7 +49,7 @@ class Preprocessor:
     def transform_obs_visual(self, obs_visual):
         transformed_obs_visual = torch.tensor(obs_visual)
         transformed_obs_visual = self.preprocess_obs_visual(transformed_obs_visual)
-        transformed_obs_visual = self.transform(transformed_obs_visual)
+        # transformed_obs_visual = self.transform(transformed_obs_visual)
         return transformed_obs_visual
     
     def transform_obs(self, obs):

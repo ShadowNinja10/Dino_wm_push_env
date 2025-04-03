@@ -1,9 +1,9 @@
 _target_: planning.cem.CEMPlanner
 horizon: 5
-topk: 30
-num_samples: 300
+topk: 3
+num_samples: 3
 var_scale: 1
-opt_steps: 30
+opt_steps: 3
 eval_every: 1
 
 name: cem

@@ -227,8 +227,11 @@ class PlanEvaluator:  # evaluator for planning
                     frame = rearrange(frame, "w1 w2 c -> (w1) w2 c")
                     frame = frame.detach().cpu().numpy()
                     frames.append(frame)
+                # video_writer = imageio.get_writer(
+                #     f"{filename}_{idx}_{success_tag}.mp4", fps=12
+                # )
                 video_writer = imageio.get_writer(
-                    f"{filename}_{idx}_{success_tag}.mp4", fps=12
+                    f"{filename}_{idx}_{success_tag}.mp4", fps=12, format="FFMPEG"
                 )
 
                 for frame in frames:

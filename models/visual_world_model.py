@@ -114,6 +114,7 @@ class VWorldModel(nn.Module):
         return act
     
     def encode_proprio(self, proprio):
+        proprio = proprio.float()
         proprio = self.proprio_encoder(proprio)
         return proprio
 

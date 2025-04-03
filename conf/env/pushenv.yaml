@@ -1,0 +1,20 @@
+name: pushenv
+args: []
+kwargs: 
+  with_target: true
+  shape: "E_img"
+
+
+dataset:
+  _target_: "datasets.pushenv_dset.load_pushenv_slice_train_val"
+  n_rollout: null
+  normalize_action: ${normalize_action}
+  data_path: ${oc.env:DATASET_DIR}/pushenv
+ 
+  split_ratio: 0.9
+  transform:
+    _target_: "datasets.img_transforms.default_transform"
+    img_size: ${img_size}
+
+decoder_path: null
+num_workers: 16
